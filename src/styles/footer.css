@@ -1,0 +1,36 @@
+.footer-app {
+    /* position: fixed; */
+    /* bottom: 0; */
+    /* left: 0pt; */
+    /* width: 100vw; */
+    /* height: 100vw; */
+    /* min-height: 100%; */
+    /* min-width: 100%; */
+    /*height: 10vh;            /* Footer height */
+    /* vertical-align: center; */
+    /* align-items: center; */
+        /* height:24px; Replace with the height your footer should be */
+    /* width: 100%; Don't change */
+    /* background-image: none; */
+    /* background-repeat: repeat; */
+    /* background-attachment: scroll; */
+    /* background-position: 0% 0%; */
+    background-color: inherit;
+    align-content: center;
+}
+
+.social-link-images {
+    width:5vmin;
+    min-width: inherit;
+}
+
+.footer-contents {
+
+    height: 15vh; /* Replace with the height your footer should be */
+    width: 100vw; /* Visible width of footer */
+    margin:auto;
+}
+
+.btn {
+    font-size: calc(1px + 1.5vmin);
+}
