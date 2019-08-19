@@ -16,12 +16,13 @@ import '../styles/navbar.css';
 export default class Navigator extends React.Component {
     constructor(props) {
         super(props);
-        this.toggle = this.toggle.bind(this);
+        // console.log("props: " + props);
         this.state = {
-            name: this.props.name,
             contents: this.props.contents,
             isOpen: false
         };
+
+        this.toggle = this.toggle.bind(this);
     }
     
     toggle() {
@@ -30,46 +31,46 @@ export default class Navigator extends React.Component {
         });
     }
 
-    displaySocialLinks = () => {
-        var contents = this.state.contents;
-        // var length = contents.length;
+    displayFiles = () => {
+        var contents = this.props.contents;
+        console.log(contents[0]);
         return (
-            contents.map((content, idx) => {
+            contents.files.map((file, idx) => {
                 return (
-                    // <NavItem key={idx}>
-                        // <NavLink href={content.link} target="_blank">
                     <UncontrolledDropdown key={idx} nav inNavbar>
                         <DropdownToggle nav caret>
-                            {content.title}
-                            {/* {(() => {
-                                return idx < length - 1 ? ' |' : null;
-                            })()} */}
+                            {file.title}
                         </DropdownToggle>
                         <DropdownMenu right>
-                            {content.files.map((file, idx) => 
+                            {file.types.map((type, idx) => 
                                 <DropdownItem key={idx}>
-                                    <NavLink href={file.file} target="_blank">
-                                        {file.name}
+                                    <NavLink href={file.paths[idx]} target="_blank">
+                                        {type}
                                     </NavLink>
                                 </DropdownItem>
                             )}
                         </DropdownMenu>
                     </UncontrolledDropdown>
-                        // </NavLink>
-                    // </NavItem>
                 );
             })
         );
     }
 
     render() {
+        var portfolio = "Portfolio";
+        var firstname = this.state.contents.brandInfo.firstname;
+        var lastname = this.state.contents.brandInfo.lastname;
         return (
             <Navbar color="inverse" light expand="md">
-                <NavbarBrand href="/">Portfolio: <strong>Dennis McCann</strong></NavbarBrand>
+                <NavbarBrand href="/">
+                    <div className="brand">
+                        {portfolio}: <strong>{firstname} {lastname}</strong>
+                    </div>
+                </NavbarBrand>
                 <NavbarToggler onClick={this.toggle} />
                 <Collapse isOpen={this.state.isOpen} navbar>
                     <Nav className="ml-auto" navbar>
-                        {this.displaySocialLinks()}
+                        {this.displayFiles()}
                     </Nav>
                 </Collapse>
             </Navbar>
