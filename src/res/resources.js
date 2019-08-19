@@ -15,13 +15,15 @@ import passwordmanager3 from './images/passwordManager3.png';
 import passwordmanager4 from './images/passwordManager4.png';
 import passwordmanager5 from './images/passwordManager5.png';
 import passwordmanager6 from './images/passwordManager6.png';
-import darts1 from './images/darts1.jpg';
-import darts2 from './images/darts2.jpg';
+import darts1 from './images/darts1.png';
+import darts2 from './images/darts2.png';
+import darts3 from './images/darts3.png';
+
 
 const descriptions = [
-    "Open 3D game engine framework. Open 3D game engine framework. Open 3D game engine framework. Open 3D game engine framework. Open 3D game engine framework. Open 3D game engine framework.",
-    "Desktop application to encrypt and store login information.",
-    "Dart mini-game.",
+    "Open 3D game engine framework. Open 3D game engine framework which allows game devs to focus on game design rather than the complex and tedious boilerplate coding required to create a game engine.",
+    "Desktop application written in Java designed to encrypt and locally store login information securely.",
+    "Dart mini-game written in Java. Use timing and accuracy to score big and win big using the gambling tied into bank account system.",
 ];
 
 // var fs = require('fs');
@@ -88,7 +90,7 @@ export function getModalContents() {
         [xengine1, xengine2, xengine3],
         [passwordmanager1, passwordmanager2, passwordmanager3, 
             passwordmanager4, passwordmanager5, passwordmanager6,],
-        [darts1, darts2],
+        [darts1, darts2, darts3],
     ];
     var alts = getProjectNames();
     var desc = descriptions;

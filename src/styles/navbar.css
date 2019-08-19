@@ -2,6 +2,15 @@
     color: orange;
 }
 
+.dropdown-menu {
+    background-color: whitesmoke;
+    border-radius: 25px;
+}
+
+/* .dropdown-menu-right {
+    background-color: black;
+} */
+
 .navbar {
     /* width: inherit; */
     height: 100%;

@@ -1,3 +1,23 @@
 .modal-description {
+    text-align: left;
+    /* overflow: auto; */
+    /* font-size: 150%; */
+}
+
+.modal-description-inner {
+    text-align: inherit;
     overflow: auto;
+    /* font-size: 175%; */
+}
+
+.modal-body {
+    background-color: lightslategray;
+}
+
+.modal-header {
+    background-color: orange;
+}
+
+.modal-footer {
+    background-color: orange;
 }

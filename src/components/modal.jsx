@@ -37,9 +37,9 @@ export default class ModalDisplay extends React.Component {
             <div>
                 <div className="modal-description">
                     <h1><strong>Description</strong></h1>
-                    <p>{content.description? content.description : 'no description set' }</p>
+                    <p className="modal-description-inner">{content.description? content.description : 'no description set' }</p>
                 </div>
-                <h1><strong>Screenshots</strong></h1>
+                <h1 style={{align: 'left'}}><strong>Screenshots</strong></h1>
                 {content.screenshots.map((screen, idx) => {
                     return(
                         <img src={screen} key={idx} alt={content.alt} width="100%" />

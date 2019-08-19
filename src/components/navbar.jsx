@@ -33,7 +33,7 @@ export default class Navigator extends React.Component {
 
     displayFiles = () => {
         var contents = this.props.contents;
-        console.log(contents[0]);
+        var length = contents.files.length;
         return (
             contents.files.map((file, idx) => {
                 return (
@@ -42,12 +42,15 @@ export default class Navigator extends React.Component {
                             {file.title}
                         </DropdownToggle>
                         <DropdownMenu right>
-                            {file.types.map((type, idx) => 
+                            {file.types.map((type, idx) =>
+                            <div>
                                 <DropdownItem key={idx}>
                                     <NavLink href={file.paths[idx]} target="_blank">
                                         {type}
                                     </NavLink>
                                 </DropdownItem>
+                                {idx < length ? <DropdownItem divider/> : null}
+                                </div>
                             )}
                         </DropdownMenu>
                     </UncontrolledDropdown>
