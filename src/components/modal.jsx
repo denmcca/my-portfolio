@@ -16,7 +16,31 @@ export default class ModalDisplay extends React.Component {
             modal: this.props.show,
             contents: this.props.contents,
             currentPage: this.props.currentPage,
+            showImageModal: false,
+            currentImage: null,
         };
+    }
+
+    toggleImageModal = (index) => {
+        this.setState ({
+            showImageModal: !this.state.showImageModal,
+            currentImage: index,
+        })
+    }
+    
+    closeImageModal = (key) => {
+        if (key.which === 27 && this.state.showImageModal)
+            this.setState ({
+                showImageModal: false,
+            })
+    }
+
+    componentDidMount() {
+        document.addEventListener("keydown", this.closeImageModal, false);
+    }
+
+    componentWillUnmount() {
+        document.removeEventListener("keydown", this.closeImageModal, false);
     }
 
     toggle = () => {
@@ -25,6 +49,7 @@ export default class ModalDisplay extends React.Component {
         });
         this.props.toggleModal();
     }
+
 
     setPage = (funct) => {
         funct(this.state.currentPage);
@@ -42,7 +67,7 @@ export default class ModalDisplay extends React.Component {
                 <h1 style={{align: 'left'}}><strong>Screenshots</strong></h1>
                 {content.screenshots.map((screen, idx) => {
                     return(
-                        <img src={screen} key={idx} alt={content.alt} width="100%" />
+                        <img src={screen} onClick={() => this.toggleImageModal(idx)} className="img-modal" key={idx} alt={content.alt} width="100%" />
                     );
                 })}
             </div>
@@ -52,8 +77,7 @@ export default class ModalDisplay extends React.Component {
     render(){
         var page = this.props.currentPage;
         var content = this.state.contents[page];
-        console.log(page);
-        console.log(content);
+        var currentImage = this.state.currentImage;
         return (
             <div>
                 {page >= '0' ? 
@@ -66,8 +90,14 @@ export default class ModalDisplay extends React.Component {
                             {/* <Button color="primary" onClick={this.toggle}>Do Something</Button>{' '} */}
                             <Button color="secondary" onClick={this.toggle}>Close</Button>
                         </ModalFooter>
+                        <Modal isOpen={this.state.showImageModal} size={"xl"} onKeyPress={this.closeImageModal}>
+                            <img src={content.screenshots[currentImage]} width={"100%"} 
+                                onClick={this.toggleImageModal} key={page + currentImage}
+                                alt={content.title} />
+                            <p style={{backgroundColor:'lightslategray'}}>Click image to close</p>
+                        </Modal>
                     </Modal>
-                    : null
+                        : null
                 }
             </div>
         );

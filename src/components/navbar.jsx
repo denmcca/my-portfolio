@@ -43,14 +43,14 @@ export default class Navigator extends React.Component {
                         </DropdownToggle>
                         <DropdownMenu right>
                             {file.types.map((type, idx) =>
-                            <div>
-                                <DropdownItem key={idx}>
+                            <div key={idx}>
+                                <DropdownItem>
                                     <NavLink href={file.paths[idx]} target="_blank">
                                         {type}
                                     </NavLink>
                                 </DropdownItem>
                                 {idx < length ? <DropdownItem divider/> : null}
-                                </div>
+                            </div>
                             )}
                         </DropdownMenu>
                     </UncontrolledDropdown>
@@ -65,7 +65,7 @@ export default class Navigator extends React.Component {
         var lastname = this.state.contents.brandInfo.lastname;
         return (
             <Navbar color="inverse" light expand="md">
-                <NavbarBrand href="/">
+                <NavbarBrand>
                     <div className="brand">
                         {portfolio}: <strong>{firstname} {lastname}</strong>
                     </div>
