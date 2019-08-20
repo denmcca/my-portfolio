@@ -6,7 +6,10 @@
   padding: 1vh;
   align-content: center;
   width: 100%;
+  max-width: 800px;
   height: 100%;
+  margin-right: auto;
+  margin-left: auto;
 }
 
 header {
@@ -117,15 +120,17 @@ button:hover {
 		top: 50%;
 		transform: translateY(-50%);
 		z-index: 10;
-		background: url('http://svgshare.com/i/41_.svg') no-repeat center center / 16px;
-		width: 32px;
-		height: 32px;
+		background: url('https://svgshare.com/i/41_.svg') no-repeat center center / 16px;
+		width: 48px;
+		height: 48px;
 		text-indent: -9999px;
 		cursor: pointer;
 }
 
 .previousButton:hover, .nextButton:hover {
-  background: url('http://svgshare.com/i/41_.svg') no-repeat center center / 16px;
+  background: url('https://svgshare.com/i/41_.svg') no-repeat center center / 24px;
+  /* height: 48px; */
+  /* width: 48px; */
 }
 
 .previousButton {
@@ -135,7 +140,7 @@ button:hover {
 }
 
 .previousButton:hover {
-  left: -10px;
+  left: -1%;
 }
 
 .nextButton {
@@ -143,7 +148,7 @@ button:hover {
 }
 
 .nextButton:hover {
-  right: -10px;
+  right: -1%;
 }
 
 .slider-content {

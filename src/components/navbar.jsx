@@ -16,7 +16,6 @@ import '../styles/navbar.css';
 export default class Navigator extends React.Component {
     constructor(props) {
         super(props);
-        // console.log("props: " + props);
         this.state = {
             contents: this.props.contents,
             isOpen: false
@@ -45,7 +44,7 @@ export default class Navigator extends React.Component {
                             {file.types.map((type, idx) =>
                             <div key={idx}>
                                 <DropdownItem>
-                                    <NavLink href={file.paths[idx]} target="_blank">
+                                    <NavLink href={file.paths[idx]} target="_blank" ref="noopener noreferrer">
                                         {type}
                                     </NavLink>
                                 </DropdownItem>

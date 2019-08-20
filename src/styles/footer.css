@@ -32,5 +32,18 @@
 }
 
 .btn {
-    font-size: calc(1px + 1.5vmin);
+    font-size: calc(0px + 1.5vmin);
+    /* padding: 0%; */
+}
+
+.button-text-top {
+    font-size: 5%;
+    padding-bottom: 0%;
+    margin-bottom: 0%;
+}
+
+.button-text-bottom {
+    font-size: 100%;
+    padding-top: 0%;
+    margin-top: 0%;
 }

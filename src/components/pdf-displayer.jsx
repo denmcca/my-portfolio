@@ -22,7 +22,6 @@ export default class PdfDisplayer extends Component {
 
     render() {
         const {pageNumber, numPages} = this.state;
-        console.log(this.state.file);
         return (
             <div>
                 {pageNumber + " test"}

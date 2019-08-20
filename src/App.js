@@ -51,8 +51,15 @@ export default class App extends Component {
                     <Container>
                         <Row className="row-main">
                             <Col>
-                                <SliderDisplayer content={this.state.sliderContents} currentPage={this.state.activePage} toggle={this.toggleModal} />
-                                <ModalDisplay show={this.state.showModal} toggleModal={this.toggleModal} contents={this.state.modalContents} currentPage={this.state.currentPage} />
+                                <SliderDisplayer content={this.state.sliderContents} 
+                                                currentPage={this.state.activePage} 
+                                                toggle={this.toggleModal} 
+                                />
+                                <ModalDisplay show={this.state.showModal} 
+                                              toggleModal={this.toggleModal} 
+                                              contents={this.state.modalContents} 
+                                              currentPage={this.state.currentPage} 
+                                />
                             </Col>
                         </Row>
                     </Container>

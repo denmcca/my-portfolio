@@ -87,7 +87,6 @@ export default class ModalDisplay extends React.Component {
                             {this.renderBody(page)}
                         </ModalBody>
                         <ModalFooter>
-                            {/* <Button color="primary" onClick={this.toggle}>Do Something</Button>{' '} */}
                             <Button color="secondary" onClick={this.toggle}>Close</Button>
                         </ModalFooter>
                         <Modal isOpen={this.state.showImageModal} size={"xl"} onKeyPress={this.closeImageModal}>

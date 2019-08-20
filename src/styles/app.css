@@ -15,8 +15,8 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
   height: 100vh;
   width: 100vw;
   margin: 0;
-  min-width: 800px;
-  min-height: 600px;
+  /* min-width: 800px; */
+  /* min-height: 600px; */
 }
 .app {
   text-align: center;
@@ -55,17 +55,21 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
   /* padding-top: 10%; */
   /* padding-bottom: 10%; */
   margin: auto;
+  display: table;
+  width: inherit;
 }
 
 .container {
   position: relative;
-  top: 5%;
+  top: auto;
   /* justify-content: space-between; */
-  margin: auto;
+  margin-top: auto;
+  margin-bottom: auto;
   height: 100%;
   /* margin-top: 10%; */
-  min-height: 50%;
-  /* vertical-align: middle; */
+  /* min-height: 50%; */
+  display: table-cell;
+  vertical-align: middle;
 }
 
 body {

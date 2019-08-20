@@ -32,15 +32,17 @@ export default class Footer extends React.Component {
                 <div className="footer-contents">
                     <div>
                         {this.displaySocialLinks()}
-                        <br></br>
+                        <br/>
                         <Button
                             tag="a"
                             color="success"
                             size="large"
                             href="http://reactstrap.github.io"
+                            rel="noopener noreferrer"
                             target="_blank"
                         >
-                            Reactstrap
+                            <p className="button-text-top">Created using</p>
+                            <p className="button-text-bottom">reactstrap</p>
                         </Button>
                     </div>
                 </div>
