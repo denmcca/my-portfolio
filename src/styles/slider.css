@@ -12,6 +12,16 @@
   margin-left: auto;
 }
 
+.image-wrapper {
+  position: relative;
+}
+
+.image-overlay {
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
 header {
   position: relative;
   top: 0;

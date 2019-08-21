@@ -17,33 +17,41 @@
     /* background-position: 0% 0%; */
     background-color: inherit;
     align-content: center;
+    /* display: table; */
+    height: 100%;
+    margin: 0%;
 }
 
 .social-link-images {
-    width:5vmin;
-    min-width: inherit;
+    height: 10vh;
+    /* min-width: inherit; */
 }
 
 .footer-contents {
-
-    height: 15vh; /* Replace with the height your footer should be */
+    height: 100%; /* Replace with the height your footer should be */
     width: 100vw; /* Visible width of footer */
     margin:auto;
+    /* display: table-cell; */
+    /* vertical-align: top; */
 }
 
 .btn {
-    font-size: calc(0px + 1.5vmin);
+    /* font-size: calc(8pt + 3vmin); */
     /* padding: 0%; */
+    height: 4vh;
+    border-radius: 5pt;
 }
 
 .button-text-top {
-    font-size: 5%;
-    padding-bottom: 0%;
-    margin-bottom: 0%;
+    font-size: 30%;
+    /* height: 20%; */
+    /* width: auto; */
 }
 
 .button-text-bottom {
-    font-size: 100%;
-    padding-top: 0%;
+    font-size: 60%;
+    /* height: 60%; */
+    /* width: auto; */
     margin-top: 0%;
+    font-weight: bolder;
 }

@@ -32,7 +32,7 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
   position: inherit;
   background-color: orange;
   /* min-height: 10vh; */
-  height: 10%;
+  min-height: 10%;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -75,7 +75,7 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
 body {
   text-align: center;
   background-color: lightslategray;
-  height: 100vh;
+  height: 100%;
 }
 
 .row-main {
@@ -88,11 +88,14 @@ body {
 .app-footer {
   position: fixed;
   bottom: 0pt;
-  height: 10%;
-  width: 100%;
+  left: 0;
+  margin: 0%;
+  height: 10vh;
+  width: 100vw;
+
   /* min-height: 20%; */
   background-color: orange;
-  font-size: calc(0px + 0vmin);
+  /* font-size: calc(0px + 0vmin); */
 }
 
 .col {

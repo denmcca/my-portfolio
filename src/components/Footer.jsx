@@ -1,5 +1,4 @@
 import React from 'react';
-import {Button} from 'reactstrap';
 import '../styles/footer.css'
 
 export default class Footer extends React.Component {
@@ -30,21 +29,7 @@ export default class Footer extends React.Component {
         return (
             <div className="footer-app">
                 <div className="footer-contents">
-                    <div>
-                        {this.displaySocialLinks()}
-                        <br/>
-                        <Button
-                            tag="a"
-                            color="success"
-                            size="large"
-                            href="http://reactstrap.github.io"
-                            rel="noopener noreferrer"
-                            target="_blank"
-                        >
-                            <p className="button-text-top">Created using</p>
-                            <p className="button-text-bottom">reactstrap</p>
-                        </Button>
-                    </div>
+                    {this.displaySocialLinks()}
                 </div>
             </div>
         )
