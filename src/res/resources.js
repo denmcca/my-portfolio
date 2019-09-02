@@ -18,12 +18,17 @@ import passwordmanager6 from './images/passwordManager6.png';
 import darts1 from './images/darts1.png';
 import darts2 from './images/darts2.png';
 import darts3 from './images/darts3.png';
+import darts4 from './images/darts4.png';
+import darts5 from './images/darts5.png';
+import darts6 from './images/darts6.png';
 
 
 const descriptions = [
-    "Open 3D game engine framework. Open 3D game engine framework which allows game devs to focus on game design rather than the complex and tedious boilerplate coding required to create a game engine.",
+    "Open 3D game engine framework which allows game devs to focus on game design rather than the complex and tedious boilerplate coding " +
+        "required to create a game engine.",
     "Desktop application written in Java designed to encrypt and locally store login information securely.",
-    "Dart mini-game written in Java. Use timing and accuracy to score big and win big using the gambling tied into bank account system.",
+    "First Java project written in 2015. Users must use timing and accuracy to acheive their highest score. Re-engineering the project " + 
+        "in 2019, an ECS style architecture was incorporated.",
 ];
 
 // var fs = require('fs');
@@ -33,7 +38,7 @@ export function getProjectCoverImages() {
 };
 
 export function getProjectNames() {
-    return ['X-Engine', 'PasswordKeeper', 'Darts Game'];
+    return ['X-Engine', 'PasswordKeeper', 'JustDarts'];
 }
 
 export function getSocialLinks() {
@@ -53,7 +58,7 @@ export function getProjectLinks() {
     return [
         'https://github.com/Michaelwolf95/XEngine', 
         'https://github.com/denmcca/PasswordKeeper', 
-        'https://github.com/denmcca/DartsAndBanking'
+        'https://github.com/denmcca/JustDarts',
     ];
 }
 
@@ -67,7 +72,6 @@ export function getNavBarContents() {
 }
 
 export function getNavBarResumeFilesContent() {
-    // parseFiles();
     var titles = [], paths = [], types = [],
         contents = {brandInfo: null, files: []};
     titles = ['resume'];
@@ -90,7 +94,7 @@ export function getModalContents() {
         [xengine1, xengine2, xengine3],
         [passwordmanager1, passwordmanager2, passwordmanager3, 
             passwordmanager4, passwordmanager5, passwordmanager6,],
-        [darts1, darts2, darts3],
+        [darts1, darts2, darts3, darts4, darts5, darts6,],
     ];
     var alts = getProjectNames();
     var desc = descriptions;
@@ -116,9 +120,9 @@ export function getSliderContents() {
         sliderContents.push({
             bg: bgs[idx],
             alt: alt,
+            description: descriptions[idx],
             url: projectLinks[idx],
         });
     });
-
     return sliderContents;
 };

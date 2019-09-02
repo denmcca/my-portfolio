@@ -40,7 +40,7 @@
 .brand {
     /* margin: auto; */
     float: left;
-    font-size: 1.3rem;
+    font-size: 100%;
     margin-left: 0px;
     width: inherit;
     height: inherit;

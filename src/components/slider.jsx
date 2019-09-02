@@ -12,7 +12,7 @@ export default class SlideDisplayer extends React.Component {
         this.props.content.forEach(function(proj) {
             contents.push({
                 title: proj.alt,
-                description: proj.path,
+                description: proj.description,
                 button: 'Learn More',
                 image: proj.bg,
                 user: "me",
@@ -23,15 +23,16 @@ export default class SlideDisplayer extends React.Component {
 
         this.state = {
             content: contents,
-            currentPage: this.props.currentPage,
+            activePage: this.props.activePage,
         }
     }
 
     render() {
+        var activePage = this.state.activePage, content = this.state.content;
         return (
             <div className="slider-body">
-                <Slider slideIndex={this.props.activePage} className="slider-wrapper">
-                    {this.state.content.map((item, index) => (
+                <Slider slideIndex={activePage} className="slider-wrapper">
+                    {content.map((item, index) => (
                         <div
                             key={index}
                             className="slider-content"
@@ -39,9 +40,9 @@ export default class SlideDisplayer extends React.Component {
                         >
                             <div className="inner">
                                 <h1>{item.title}</h1>
-                                <p>{item.description}</p>
+                                <p>{item.description.substring(0, 50) + "..."}</p>
                                 <button onClick={() => 
-                                    this.props.toggle(index)}>
+                                    this.props.toggleModal(index)}>
                                     {item.button}
                                 </button>
                             </div>

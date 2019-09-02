@@ -109,7 +109,7 @@ button:hover {
 }
 
 .slide {
-  height: 70vh;
+  /* height: 80vh; */
   background-size: cover !important;
 }
 

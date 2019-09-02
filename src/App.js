@@ -20,23 +20,31 @@ export default class App extends Component {
       sliderContents: getSliderContents(),
       modalContents: getModalContents(),
       navbarContents: getNavBarResumeFilesContent(),
-      currentPage: 0,
       activePage: 0,
       socialLinks: getSocialLinks(),
       showModal: false,
     }
   }
-  
-  changeActiveSliderPage = (pageNum) => {
-    this.setState = {
-        activePage: pageNum,
-    }
+
+  componentDidMount() {
+    this.tickID = setInterval(this.tick, 1000);
+  }
+
+  componentWillUnmount() {
+    clearInterval(this.tickID);
+  }
+
+  tick = () => {
+    // var number = this.state.number + 1;
+    // this.setState({
+    //   number: number,
+    // })
   }
 
   toggleModal = (page) => {
     this.setState ({
         showModal: !this.state.showModal,
-        currentPage: page,
+        activePage: page,
     });
   }
 
@@ -44,21 +52,21 @@ export default class App extends Component {
     try {
         return (
             <div className="main">
-                <header className="app-header">
+                <div className="app-header">
                     <Navigator contents={this.state.navbarContents} />
-                </header>
+                </div>
                 <div className="app-body">
                     <Container>
                         <Row className="row-main">
                             <Col>
                                 <SliderDisplayer content={this.state.sliderContents} 
-                                                currentPage={this.state.activePage} 
-                                                toggle={this.toggleModal} 
+                                                activePage={this.state.activePage}
+                                                toggleModal={this.toggleModal}
                                 />
                                 <ModalDisplay show={this.state.showModal} 
                                               toggleModal={this.toggleModal} 
                                               contents={this.state.modalContents} 
-                                              currentPage={this.state.currentPage} 
+                                              currentPage={this.state.activePage} 
                                 />
                             </Col>
                         </Row>
