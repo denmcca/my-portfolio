@@ -126,3 +126,7 @@ export function getSliderContents() {
     });
     return sliderContents;
 };
+
+export function getPdf() {
+    return pdf;
+}

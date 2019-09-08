@@ -2,7 +2,7 @@ import React from 'react';
 import {
     Modal, ModalHeader, ModalBody, ModalFooter,
 } from 'reactstrap';
-import "../styles/modal.css"
+import "../styles/modal.css";
 import {
     Button,
 } from 'reactstrap';
@@ -29,7 +29,7 @@ export default class ModalDisplay extends React.Component {
     }
     
     closeImageModal = (key) => {
-        if (key.which === 27 && this.state.showImageModal)
+        if (key.which === 27 && this.state.showImageModal) // 27 == Esc key
             this.setState ({
                 showImageModal: false,
             })
@@ -59,17 +59,23 @@ export default class ModalDisplay extends React.Component {
         page = page ? page : 0;
         var content = this.state.contents[page];
         return (
-            <div>
-                <div className="modal-description">
+            <div className="modal-description">
+                <div className="modal-description-title">
                     <h1><strong>Description</strong></h1>
-                    <p className="modal-description-inner">{content.description? content.description : 'no description set' }</p>
+                    <div className="modal-description-body">
+                        {content.description? content.description : 'no description set' }
+                    </div>
                 </div>
-                <h1 style={{align: 'left'}}><strong>Screenshots</strong></h1>
-                {content.screenshots.map((screen, idx) => {
-                    return(
-                        <img src={screen} onClick={() => this.toggleImageModal(idx)} className="img-modal" key={idx} alt={content.alt} width="100%" />
-                    );
-                })}
+                <div className="modal-description-title">
+                    <h1 style={{align: 'center'}}>
+                        <strong>Screenshots</strong>
+                    </h1>
+                    {content.screenshots.map((screen, idx) => {
+                        return(
+                            <img src={screen} onClick={() => this.toggleImageModal(idx)} className="img-modal" key={idx} alt={content.alt} width="100%" />
+                            );
+                        })}
+                </div>
             </div>
         );
     }

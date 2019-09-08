@@ -1,7 +1,12 @@
 import React, { Component } from 'react';
-import { Page } from 'react-pdf';
-import { Document } from 'react-pdf/dist/entry.webpack';
-import 'react-pdf/dist/Page/AnnotationLayer.css';
+import { Button } from 'reactstrap';
+import {
+    Modal, ModalHeader, ModalBody, ModalFooter,
+} from 'reactstrap';
+import "../styles/pdf-displayer.css";
+import {getPdf} from '../res/resources';
+// import { Document } from 'react-pdf/dist/entry.webpack';
+// import 'react-pdf/dist/Page/AnnotationLayer.css';
 
 
 export default class PdfDisplayer extends Component {
@@ -14,23 +19,43 @@ export default class PdfDisplayer extends Component {
         }
     }
 
-    onDocumentLoadSuccess = ({numPages}) => {
-        this.setState({
-            numPages
+    toggle = () => {
+        this.setState ({
+            pdfModal: !this.state.pdfmodal,
         });
+        this.props.toggleModal();
+    }
+
+    onDocumentLoadSuccess = ({numPages}) => {
+        // this.setState({
+        //     numPages
+        // });
     };
 
+    renderBody = () => {
+        return(
+            <div className="pdf-wrapper">
+                    <iframe className="pdf-view-body" src={getPdf()} title="Resume PDF" />
+            </div>
+        );
+    }
+
     render() {
-        const {pageNumber, numPages} = this.state;
+        // const {pageNumber, numPages} = this.state;
+        var showModal = this.props.show;
+        var toggleModalFunc = this.toggle;
         return (
             <div>
-                {pageNumber + " test"}
-                {numPages}
-                <Document file={this.state.file} onLoadSuccess={this.onDocumentLoadSuccess}>
-                    <Page pageNumber={pageNumber} />
-                </Document>
-                <p>Page {pageNumber} of {numPages}</p>
-            </div>
+                <Modal isOpen={showModal} toggle={toggleModalFunc} centered={true} size={'xl'}>
+                    <ModalHeader toggle={toggleModalFunc}>Resume</ModalHeader>
+                    <ModalBody>
+                        {this.renderBody()}
+                    </ModalBody>
+                    <ModalFooter>
+                        <Button color="secondary" onClick={toggleModalFunc}>Close</Button>
+                    </ModalFooter>
+                </Modal>
+        </div>
         );
     };
 }

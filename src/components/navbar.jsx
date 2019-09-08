@@ -43,9 +43,15 @@ export default class Navigator extends React.Component {
                             {file.types.map((type, idx) =>
                             <div key={idx}>
                                 <DropdownItem>
-                                    <NavLink href={file.paths[idx]} target="_blank" ref="noopener noreferrer">
-                                        {type}
-                                    </NavLink>
+                                    { type !== "pdf" ? 
+                                        <NavLink href={file.paths[idx]} target="_blank" ref="noopener noreferrer">
+                                            {type}
+                                        </NavLink>
+                                        :
+                                        <NavLink onClick={this.props.togglePdfModal}>
+                                            {type}
+                                        </NavLink>
+                                    }
                                 </DropdownItem>
                                 {idx < length ? <DropdownItem divider/> : null}
                             </div>

@@ -1,13 +1,33 @@
 .modal-description {
-    text-align: left;
-    /* overflow: auto; */
-    /* font-size: 150%; */
+    /* background-color: whitesmoke; */
+    /* text-align: center; */
+    font-weight: 100;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    /* padding-inline-start: .5%; */
+    /* padding-inline-end: .5%; */
+    margin-top: 0.4%;
+    margin-left: 0.2%;
+    margin-bottom: 0.4%;
+    margin-right: 0.2%;    
 }
 
-.modal-description-inner {
-    text-align: inherit;
+.modal-description-title {
+    background-color: rgba(200, 200, 200, 1.000);
+    text-align: center;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+    padding-inline-start: .1%;
+    padding-inline-end: .1%;
+    margin-top: 0.4%;
+    margin-bottom: 0.4%;
+}
+
+.modal-description-body {
+    background-color: white;
+    text-align: left;
+    border-bottom-left-radius: 3px;
+    border-bottom-right-radius: 3px;
     overflow: auto;
-    /* font-size: 175%; */
 }
 
 .modal {

@@ -12,6 +12,7 @@ import ModalDisplay from './components/modal';
 import Footer from './components/footer';
 import { getSocialLinks, getNavBarResumeFilesContent, 
     getSliderContents, getModalContents } from './res/resources';
+import PdfDisplayer from './components/pdf-displayer';
 
 export default class App extends Component {
   constructor(props) {
@@ -22,16 +23,17 @@ export default class App extends Component {
       navbarContents: getNavBarResumeFilesContent(),
       activePage: 0,
       socialLinks: getSocialLinks(),
-      showModal: false,
+      // showModal: false,
+      // showPdfModal: false,
     }
   }
 
   componentDidMount() {
-    this.tickID = setInterval(this.tick, 1000);
+    // this.tickID = setInterval(this.tick, 1000);
   }
 
   componentWillUnmount() {
-    clearInterval(this.tickID);
+    // clearInterval(this.tickID);
   }
 
   tick = () => {
@@ -48,12 +50,18 @@ export default class App extends Component {
     });
   }
 
+  togglePdfModal = () => {
+    this.setState ({
+        showPdfModal: !this.state.showPdfModal,
+    });
+  }
+
   render() {
     try {
         return (
             <div className="main">
                 <div className="app-header">
-                    <Navigator contents={this.state.navbarContents} />
+                    <Navigator contents={this.state.navbarContents} togglePdfModal={this.togglePdfModal} />
                 </div>
                 <div className="app-body">
                     <Container>
@@ -68,11 +76,16 @@ export default class App extends Component {
                                               contents={this.state.modalContents} 
                                               currentPage={this.state.activePage} 
                                 />
+                                <PdfDisplayer show={this.state.showPdfModal}
+                                              toggleModal={this.togglePdfModal}
+                                />
                             </Col>
                         </Row>
+                        {/* <Row>
+                        </Row> */}
                     </Container>
                 </div>  
-                <div className='app-footer'>           
+                <div className='app-footer'>
                     <Footer socialLinks={this.state.socialLinks} />
                 </div>
             </div>
